@@ -24,8 +24,8 @@ export async function getFile(
           parentId: fileNode.id,
           schema: protocols.personalDrive.types.file.schema,
           protocol: protocols.personalDrive.protocol,
-          protocolPath: fileNode.parent ? undefined : "catalogue/fileNode/file",
-          contextId: fileNode.parent ? undefined : fileNode.parent,
+          protocolPath: !fileNode.parent ? undefined : "catalogue/fileNode/file",
+          contextId: !fileNode.parent ? undefined : fileNode.parent,
         },
       },
     }));
@@ -36,8 +36,8 @@ export async function getFile(
           recordId: fileNode.fileID,
           schema: protocols.personalDrive.types.file.schema,
           protocol: protocols.personalDrive.protocol,
-          protocolPath: fileNode.parent ? undefined : "catalogue/fileNode/file",
-          contextId: fileNode.parent ? undefined : fileNode.parent,
+          protocolPath: !fileNode.parent ? undefined : "catalogue/fileNode/file",
+          contextId: !fileNode.parent ? undefined : fileNode.parent,
         },
       },
     }));

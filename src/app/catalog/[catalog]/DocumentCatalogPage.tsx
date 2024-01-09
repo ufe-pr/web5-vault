@@ -33,7 +33,7 @@ function DocumentItem({ fileNode }: { fileNode: FileNode }) {
         <div className="h-8 w-8 lg:h-16 lg:w-16 flex items-center justify-center rounded-full bg-gray-600">
           <DocumentIcon className="h-6 w-6 inline-block" />
         </div>
-        <a href={`/catalog/other/${fileNode.id}`} className="block grow hover:underline">
+        <a href={`/file/${fileNode.id}`} className="block grow hover:underline">
           {fileNode.name}
         </a>
         <button

@@ -42,7 +42,7 @@ function ImageItem({ fileNode }: { fileNode: FileNode }) {
       </div>
       <div className="flex gap-4">
         <a
-          href={`/catalog/image/${fileNode.id}`}
+          href={`/file/${fileNode.id}`}
           className="block mt-2 text-center hover:underline"
         >
           {fileNode.name}

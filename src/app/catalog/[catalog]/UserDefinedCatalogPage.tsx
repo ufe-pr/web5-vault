@@ -51,7 +51,7 @@ function DocumentItem({
           <DocumentIcon className="h-6 w-6 inline-block" />
         </div>
         <a
-          href={`/catalog/${catalog}/${fileNode.id}`}
+          href={`/file/${fileNode.id}`}
           className="block grow hover:underline"
         >
           {fileNode.name}

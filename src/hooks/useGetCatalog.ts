@@ -12,7 +12,7 @@ export default function useGetCatalog(catalogId: string) {
   const { web5 } = useContext(web5Context);
 
   const getCatalog = useCallback(async () => {
-    if (!web5) {
+    if (!web5 || !catalogId || catalogId.length < 8) {
       return;
     }
     setIsLoading(true);

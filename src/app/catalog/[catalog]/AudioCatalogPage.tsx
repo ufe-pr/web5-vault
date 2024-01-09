@@ -43,7 +43,7 @@ function AudioItem({ fileNode }: { fileNode: FileNode }) {
             />
           )}
         </a>
-        <a href={`/catalog/audio/${fileNode.id}`} className="flex-grow">
+        <a href={`/file/${fileNode.id}`} className="flex-grow">
           <div className="text-lg lg:text-2xl font-bold">
             {fileNode.metadata?.title ?? fileNode.name}
           </div>

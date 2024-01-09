@@ -14,7 +14,7 @@ function zeroPad(number: any, length: number) {
 }
 
 function formatDuration(duration: number) {
-  var seconds = Math.abs(Math.ceil(duration / 1000)),
+  var seconds = Math.abs(Math.ceil(duration)),
     h = (seconds - (seconds % 3600)) / 3600,
     m = ((seconds - (seconds % 60)) / 60) % 60,
     s = seconds % 60;
@@ -63,7 +63,7 @@ function VideoItem({ fileNode }: { fileNode: FileNode }) {
             />
           )}
         </a>
-        <a href={`/catalog/video/${fileNode.id}`} className="flex-grow">
+        <a href={`/file/${fileNode.id}`} className="flex-grow">
           <h2 className="text-lg font-bold">{fileNode.name}</h2>
           <div className="mt-2">
             {/* TODO: Format duration */}

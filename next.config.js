@@ -2,13 +2,13 @@ const webpack = require("webpack");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: (config, { isServer }) => {
-    // config.optimization = {
-    //   minimize: false,
-    // };
+  webpack: (config, { isServer, config: oldConfig }) => {
+    config.optimization = {
+      minimize: false,
+    };
     config.resolve.alias.canvas = false;
     config.resolve.alias.encoding = false;
-    config.resolve.fallback = { "react-native-fs": false };
+    config.resolve.fallback = { "react-native-fs": false, critters: false };
     // config.externals = {
     //   "react-native-fs": "reactNativeFs",
     //   critters: "critters",
