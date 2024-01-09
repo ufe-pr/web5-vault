@@ -27,29 +27,26 @@ export default function Web5Provider({
   const [connectedDid, setConnectedDid] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log(connectedDid?.split(":").slice(0, 3).join(":"));
-  // console.log(web5, connectedDid, isLoading);
+  console.log("Connected DID", connectedDid?.split(":").slice(0, 3).join(":"));
 
   const connect = useCallback(async (did?: string) => {
     setIsLoading(true);
-    console.log("connect", did);
-    const { Web5 } = await import("@web5/api/browser");
+    const { Web5 } = await import("@web5/api");
+
     try {
-      console.log("await", did);
       const { web5, did: connectedDid } = await Web5.connect({
         // It also effectively rejects empty string DIDs
         connectedDid: did || undefined,
         sync: "900s",
         techPreview: { dwnEndpoints: ["https://dwn.tbddev.org/dwn1"] },
       });
-      console.log("connectedDid", connectedDid);
       localStorage.setItem(LOCAL_STORAGE_KEY_DID, connectedDid);
       setConnectedDid(connectedDid);
       setWeb5(web5);
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);
-      console.log(error);
+      console.error(error);
     }
   }, []);
 

@@ -8,7 +8,6 @@ export function useWeb5Connect() {
 
   useEffect(() => {
     const did = localStorage.getItem(LOCAL_STORAGE_KEY_DID);
-    console.log("useWeb5Connect", did, connectedDid, isLoading);
     if (did && !connectedDid && !isLoading) {
       connect(did);
     }

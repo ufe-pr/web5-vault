@@ -27,7 +27,6 @@ const AudioRenderer: DocRenderer = ({ mainState: { currentDocument } }) => {
 
       // separate out the mime component
       var mimeString = dataURI.split(",")[0].split(":")[1].split(";")[0];
-      console.log(mimeString);
 
       // write the bytes of the string to an ArrayBuffer
       var ab = new ArrayBuffer(byteString.length);
@@ -51,7 +50,6 @@ const AudioRenderer: DocRenderer = ({ mainState: { currentDocument } }) => {
       const metadata = (await extractAudioMetadata(
         typeof fileData === "string" ? dataURItoBlob(fileData) : fileData
       )) as any;
-      console.log(currentDocument);
       setThumbnail(metadata?.thumbnail);
     }
     getThumbnail();

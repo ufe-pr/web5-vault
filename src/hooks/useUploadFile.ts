@@ -98,7 +98,6 @@ export function useUploadFile(catalog: string) {
         throw new Error("Not connected");
       }
 
-      console.log(catalog);
       let metadata: any = {};
 
       if (catalog === "video") {
@@ -108,7 +107,6 @@ export function useUploadFile(catalog: string) {
       } else if (catalog === "audio") {
         metadata = await extractAudioMetadata(file);
       }
-      console.log("metadata", metadata);
 
       // TODO: Get thumbnail from file and save it in the file node as metadata
       // First create the file node
@@ -157,9 +155,6 @@ export function useUploadFile(catalog: string) {
           cause: status,
         });
       }
-
-      console.log("status", status);
-      console.log("record", record);
 
       // To optimize queries, save the file record ID in the file node
       const { status: status2 } = await fileNodeRecord.update({
