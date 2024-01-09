@@ -1,0 +1,91 @@
+{
+  "protocol": "https://ufedojo.dev/web5/protocols/personal-drive.json",
+  "published": true,
+  "types": {
+    "fileNode": {
+      "schema": "https://ufedojo.dev/web5/schemas/file-node.json",
+      "dataFormats": ["application/json"]
+    },
+    "file": {
+      "schema": "https://ufedojo.dev/web5/schemas/file.json"
+    },
+    "catalogue": {
+      "schema": "https://ufedojo.dev/web5/schemas/catalogue.json",
+      "dataFormats": ["application/json"]
+    },
+    "viewer": {},
+    "editor": {}
+  },
+  "structure": {
+    "catalogue": {
+      "$actions": [
+        {
+          "who": "author",
+          "of": "catalogue",
+          "can": "write"
+        },
+        {
+          "who": "author",
+          "of": "catalogue",
+          "can": "read"
+        }
+      ],
+      "fileNode": {
+        "$actions": [
+          {
+            "who": "author",
+            "of": "catalogue",
+            "can": "write"
+          },
+          {
+            "who": "author",
+            "of": "catalogue",
+            "can": "read"
+          }
+        ],
+        "file": {
+          "$actions": [
+            {
+              "who": "author",
+              "of": "fileNode",
+              "can": "write"
+            },
+            {
+              "who": "author",
+              "of": "fileNode",
+              "can": "read"
+            }
+          ]
+        }
+      }
+    },
+    "fileNode": {
+      "$actions": [
+        {
+          "who": "author",
+          "of": "fileNode",
+          "can": "write"
+        },
+        {
+          "who": "author",
+          "of": "fileNode",
+          "can": "read"
+        }
+      ],
+      "file": {
+        "$actions": [
+          {
+            "who": "author",
+            "of": "fileNode",
+            "can": "write"
+          },
+          {
+            "who": "author",
+            "of": "fileNode",
+            "can": "read"
+          }
+        ]
+      }
+    }
+  }
+}
